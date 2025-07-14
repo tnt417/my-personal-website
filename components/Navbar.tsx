@@ -15,8 +15,8 @@ const Navbar : React.FC = () => {
 
     const links : Link[] = [
         {label: "Gallery", link: "/gallery", new_tab: false},
-        {label: "About Me", link: "/about-me", new_tab: false},
-        {label: "Blog", link: "/blog", new_tab: false},
+        // {label: "About Me", link: "/about-me", new_tab: false},
+        // {label: "Blog", link: "/blog", new_tab: false},
         {label: "Resume", link: "https://drive.google.com/file/d/12Yj569D7LMume7SGuJ4w5XRSDCq-P1nq/view?usp=sharing", new_tab: true}
         ];
 

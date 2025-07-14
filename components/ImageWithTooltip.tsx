@@ -8,9 +8,10 @@ interface ImageWithTooltipProps {
   src: string;
   alt: string;
   tooltipText: string;
+  onClick?: () => void;
 }
 
-const ImageWithTooltip: React.FC<ImageWithTooltipProps> = ({ src, alt, tooltipText }) => {
+const ImageWithTooltip: React.FC<ImageWithTooltipProps> = ({ src, alt, tooltipText, onClick }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -18,14 +19,15 @@ const ImageWithTooltip: React.FC<ImageWithTooltipProps> = ({ src, alt, tooltipTe
       className={`relative group overflow-none transform transition duration-500 ${hovered ? 'scale-[103%]' : 'scale-100'}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={onClick}
     >
       {/* Static image that transitions to a slightly opaque state on hover */}
       <Image
         src={src}
         alt={alt}
-        width={1000}
-        height={1000}
-        className={`w-full aspect-[3/2] object-cover transition-opacity duration-300`}
+        width={300}
+        height={300}
+        className={`w-full object-cover transition-opacity duration-300`}
       />
 
         {/* Gradient overlay - visible on hover */}
